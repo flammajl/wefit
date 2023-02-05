@@ -1,5 +1,8 @@
 export const defaultTheme = {
   colors: {
-    background: '#2F2E41',
+    main: '#2F2E41',
+    white: '#ffffff',
+    grey: '#333333',
+    lightGrey: '#999999',
   },
 }

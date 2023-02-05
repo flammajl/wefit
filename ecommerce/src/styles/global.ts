@@ -19,14 +19,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.colors.background};
-    color: #fff;
+    background: ${({ theme }) => theme.colors.main};
+    color: ${({ theme }) => theme.colors.white};
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button, textarea {
     font-family: 'Open Sans', serif;
     font-size: 1rem;
+    color: ${({ theme }) => theme.colors.white};
   }
 
   h1, h2, h3, h4, h5, h6, strong {
