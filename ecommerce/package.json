@@ -6,14 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server ./src/services/server.json -p 3333 --delay 700"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
+    "redaxios": "^0.5.1",
     "styled-components": "^5.3.6",
-    "vite-plugin-svgr": "^2.4.0"
+    "vite-plugin-svgr": "^2.4.0",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
