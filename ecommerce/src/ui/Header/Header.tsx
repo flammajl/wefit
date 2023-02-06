@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { ReactComponent as CartSVG } from '../../assets/images/cart.svg'
 
 import * as S from './styles'
@@ -6,9 +7,9 @@ export function Header () {
   return (
     <header>
       <S.Container>
-        <h1>WeMovies</h1>
+        <NavLink to='/'>WeMovies</NavLink>
 
-        <button>
+        <NavLink to='/cart'>
           <span>
             <span>
               <strong>Meu carrinho</strong>
@@ -16,7 +17,7 @@ export function Header () {
             </span>
             <CartSVG />
           </span>
-        </button>
+        </NavLink>
       </S.Container>
     </header>
   )

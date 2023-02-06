@@ -7,14 +7,16 @@ export const Container = styled.nav`
 
   padding: 1.125rem 0.625rem;
 
-  h1 {
+  margin-bottom: 1.5rem;
+
+  > a {
     font-size: 1.25rem;
     font-weight: bold;
+    color: ${({ theme }) => theme.colors.white};
+    text-decoration: none;
   }
 
-  button {
-    background: none;
-    border: none;
+  a:last-child {
 
     > span {
       display: flex;

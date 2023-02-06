@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { DefaultLayout, Home } from './pages'
+import { Cart, DefaultLayout, Home } from './pages'
 
 export function App () {
   const routes = createBrowserRouter([
@@ -10,6 +10,10 @@ export function App () {
         {
           path: '/',
           element: <Home />,
+        },
+        {
+          path: 'cart',
+          element: <Cart />,
         },
       ],
     },
