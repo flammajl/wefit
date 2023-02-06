@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Cart, DefaultLayout, Home } from './pages'
+import { Cart, DefaultLayout, Home, OrderConfirmed } from './pages'
 
 export function App () {
   const routes = createBrowserRouter([
@@ -14,6 +14,10 @@ export function App () {
         {
           path: 'cart',
           element: <Cart />,
+        },
+        {
+          path: 'order-confirmed',
+          element: <OrderConfirmed />,
         },
       ],
     },

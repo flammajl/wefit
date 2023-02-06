@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { Button, EmptyCart } from '../../ui'
 import { TCartProduct, useCart } from '../../context/CartContext'
 
@@ -8,7 +9,8 @@ import { ReactComponent as PlusCircle } from '../../assets/images/plus-circle.sv
 import * as S from './styles'
 
 export function Cart () {
-  const { cartProducts, removeProduct, updateProductAmount } = useCart()
+  const navigate = useNavigate()
+  const { cartProducts, removeProduct, updateProductAmount, clearCart } = useCart()
 
   const totalPrice = cartProducts?.reduce((sumTotal, product) => {
     const total = sumTotal + product.price * product.amount
@@ -27,6 +29,11 @@ export function Cart () {
       amount: product.amount - 1,
       product,
     })
+  }
+
+  function handleConfirmOrder () {
+    clearCart()
+    navigate('/order-confirmed')
   }
 
   if (!cartProducts.length) {
@@ -89,7 +96,7 @@ export function Cart () {
       </S.Table>
       <S.Resume>
         <S.ButtonContainer>
-          <Button fullWidth>Finalizar Pedido</Button>
+          <Button fullWidth onClick={handleConfirmOrder}>Finalizar Pedido</Button>
         </S.ButtonContainer>
         <div>
           <span>Total</span>

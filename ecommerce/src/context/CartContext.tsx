@@ -29,6 +29,7 @@ type TCart = {
     product,
     amount,
   }: TUpdateProductAmount) => void
+  clearCart: () => void;
 }
 
 const CartContext = createContext<TCart | null>(null)
@@ -117,6 +118,11 @@ export function CartProvider ({ children }: TCartProvider) {
     }
   }
 
+  function clearCart () {
+    setCartProducts([])
+    localStorage.removeItem('cart')
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -124,6 +130,7 @@ export function CartProvider ({ children }: TCartProvider) {
         addProduct,
         removeProduct,
         updateProductAmount,
+        clearCart,
       }}
     >
       {children}
