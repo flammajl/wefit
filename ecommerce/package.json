@@ -10,6 +10,7 @@
     "server": "json-server ./src/services/server.json -p 3333 --delay 700"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.24.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
