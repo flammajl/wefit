@@ -1,3 +1,11 @@
+# Libs
+
+Adicionado algumas libs para melhorar o desenvolvimento e experiência do usuário, como:
+
+- [React-Icons](https://react-icons.github.io/react-icons/)
+- [React Query](https://tanstack.com/query/)
+
+
 # Como utilizar
 
 ```bash
