@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { toast } from 'react-hot-toast'
 import { getMovies, TProduct } from '../../services'
 import { Loading, MovieCard } from '../../ui'
 
@@ -19,7 +20,7 @@ export function Home () {
         setProducts(movies)
       }
     } catch (error) {
-      console.log(error)
+      toast.error('Ops! Não conseguimos trazer a lista de produtos, por favor contate um administrador!')
     } finally {
       setIsLoading(false)
     }
