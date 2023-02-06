@@ -24,9 +24,12 @@ export const Table = styled.table`
   }
 
   tbody {
+    tr td {
+      margin-top: 1.3125rem;
+    }
+
     td:has(div):has(img) {
       display: flex;
-      margin-top: 1.3125rem;
 
       span, strong {
         font-weight: bold;

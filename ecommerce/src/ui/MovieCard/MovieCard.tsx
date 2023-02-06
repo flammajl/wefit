@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useCart } from '../../context/CartContext'
 import { TProduct } from '../../services'
 import { Button } from '../Button/Button'
 import * as S from './styles'
@@ -8,10 +9,11 @@ type TMovieCard = {
 }
 
 export function MovieCard ({ product }: TMovieCard) {
-  const [count, setCount] = useState(0)
+  const { addProduct, cartProducts } = useCart()
+  const productItem = cartProducts.find(item => item.id === product.id)
 
   function handleAddProduct () {
-    setCount(oldCount => oldCount + 1)
+    addProduct(product)
   }
 
   return (
@@ -25,7 +27,7 @@ export function MovieCard ({ product }: TMovieCard) {
         currency: 'BRL',
       }).format(product.price)}
       </strong>
-      <Button fullWidth isAddToCart count={count} onClick={handleAddProduct}>Adicionar ao carrinho</Button>
+      <Button fullWidth isAddToCart amount={productItem?.amount || 0} onClick={handleAddProduct}>Adicionar ao carrinho</Button>
     </S.Container>
   )
 }

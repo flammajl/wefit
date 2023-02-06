@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 type TButtonStyle = {
   fullWidth?: boolean
+  hasItem: boolean;
 }
 
 export const Button = styled.button<TButtonStyle>`
@@ -22,6 +23,10 @@ export const Button = styled.button<TButtonStyle>`
 
   ${({ fullWidth }) => fullWidth && css`
   width: 100%;
+  `}
+
+  ${({ hasItem }) => hasItem && css`
+  background:  ${({ theme }) => theme.colors.green};
   `}
 
   span {

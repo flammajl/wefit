@@ -5,18 +5,19 @@ import * as S from './styles'
 type TButton = ButtonHTMLAttributes<HTMLButtonElement> & {
   fullWidth?: boolean
   isAddToCart?: boolean
-  count?: number
+  amount?: number
 }
 
-export function Button ({ children, isAddToCart, count, ...rest } : TButton) {
+export function Button ({ children, isAddToCart, amount, ...rest } : TButton) {
   return (
     <S.Button
+      hasItem={!!amount}
       {...rest}
     >
       {isAddToCart && (
         <span>
           <ShoppingCart />
-          {count}
+          {amount}
         </span>
       )}
       {children}

@@ -1,9 +1,11 @@
 import { NavLink } from 'react-router-dom'
 import { ReactComponent as CartSVG } from '../../assets/images/cart.svg'
+import { useCart } from '../../context/CartContext'
 
 import * as S from './styles'
 
 export function Header () {
+  const { cartProducts } = useCart()
   return (
     <header>
       <S.Container>
@@ -13,7 +15,7 @@ export function Header () {
           <span>
             <span>
               <strong>Meu carrinho</strong>
-              0 itens
+              {cartProducts.length} {cartProducts.length === 1 ? 'item' : 'itens'}
             </span>
             <CartSVG />
           </span>
