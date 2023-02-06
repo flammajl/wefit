@@ -7,7 +7,10 @@ export const Container = styled.nav`
 
   padding: 1.125rem 0.625rem;
 
-  margin-bottom: 1.5rem;
+  @media (min-width: 500px) {
+    margin-bottom: 1.5rem;
+  }
+
 
   > a {
     font-size: 1.25rem;

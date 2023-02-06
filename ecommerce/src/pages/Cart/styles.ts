@@ -19,7 +19,11 @@ export const Table = styled.table`
     padding-bottom: 1.3125rem;
 
     th:first-child {
-      width: 50%;
+      width: 50%;    
+
+      @media (max-width: 900px) {
+          width: 40%
+      }
     }
   }
 
@@ -74,6 +78,10 @@ export const Table = styled.table`
       display: flex;
       align-items: center;
       gap: 0.6875rem;
+
+      @media (max-width: 680px) {
+        flex-direction: column;
+      }
   
       input {
         max-width: 3.875rem;

@@ -6,11 +6,14 @@ import { ReactComponent as TrashIcon } from '../../assets/images/trash.svg'
 import { ReactComponent as MinusCircle } from '../../assets/images/minus-circle.svg'
 import { ReactComponent as PlusCircle } from '../../assets/images/plus-circle.svg'
 
+import { useMedia } from '../../helpers'
+import { Mobile } from './Mobile/Mobile'
 import * as S from './styles'
 
 export function Cart () {
   const navigate = useNavigate()
   const { cartProducts, removeProduct, updateProductAmount, clearCart } = useCart()
+  const mobile = useMedia('(max-width: 500px)')
 
   const totalPrice = cartProducts?.reduce((sumTotal, product) => {
     const total = sumTotal + product.price * product.amount
@@ -38,6 +41,12 @@ export function Cart () {
 
   if (!cartProducts.length) {
     return <EmptyCart />
+  }
+
+  if (mobile) {
+    return (
+      <Mobile />
+    )
   }
 
   return (
