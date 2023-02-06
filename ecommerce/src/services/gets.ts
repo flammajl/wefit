@@ -10,11 +10,11 @@ const moviesSchema = z.object({
 
 const getMoviesSchema = z.array(moviesSchema)
 
-export type TProducts = z.infer<typeof getMoviesSchema>
+export type TProduct = z.infer<typeof moviesSchema>
 
 export async function getMovies () {
   try {
-    const response = await api.get('/productss')
+    const response = await api.get('/products')
 
     const data = await response.data
 

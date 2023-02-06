@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
-import { getMovies, TProducts } from '../../services'
-import { Loading } from '../../ui'
+import { getMovies, TProduct } from '../../services'
+import { Loading, MovieCard } from '../../ui'
+
+import * as S from './styles'
 
 export function Home () {
   const [IsLoading, setIsLoading] = useState(true)
-  const [products, setProducts] = useState<TProducts>([])
+  const [products, setProducts] = useState<TProduct[]>([])
 
   async function fetchProducts () {
     try {
@@ -12,6 +14,8 @@ export function Home () {
       const movies = await getMovies()
 
       if (movies) {
+        const spiderman = movies.splice(2, 1)
+        movies.splice(1, 0, spiderman[0])
         setProducts(movies)
       }
     } catch (error) {
@@ -24,6 +28,7 @@ export function Home () {
   useEffect(() => {
     fetchProducts()
   }, [])
+
   return (
     <>
       {IsLoading
@@ -31,7 +36,11 @@ export function Home () {
           <Loading />
           )
         : (
-          <h1>Home</h1>
+          <S.ProductsContainer>
+            {products.map(product => (
+              <MovieCard key={product.id} product={product} />
+            ))}
+          </S.ProductsContainer>
           )}
     </>
   )
