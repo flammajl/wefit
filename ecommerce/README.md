@@ -30,7 +30,6 @@ $ npm run dev | yarn dev
 
 # O servidor inciará na porta:5173 - acesse <http://localhost:5173>
 ```
-
 ## 📝 Licença
 
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo de [LICENÇA](https://github.com/flammajl/kanban/blob/master/LICENSE) para detalhes.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo de [LICENÇA](https://github.com/flammajl/wefit/blob/master/license) para detalhes.
