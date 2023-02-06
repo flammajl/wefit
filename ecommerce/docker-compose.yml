@@ -1,0 +1,30 @@
+version: '3'
+
+networks:
+  wefit-net:
+    driver: bridge
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    container_name: server-wefit
+    restart: always
+    ports:
+      - '3333:3333'
+    networks:
+      - wefit-net
+
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: front-wefit
+    restart: always
+    depends_on:
+      - server
+    ports:
+      - '5173:80'
+    networks:
+      - wefit-net
