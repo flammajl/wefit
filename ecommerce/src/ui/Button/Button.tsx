@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react'
-import { ReactComponent as ShoppingCart } from '../../assets/images/shopping-cart.svg'
+import { MdAddShoppingCart } from 'react-icons/md'
 import * as S from './styles'
 
 type TButton = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -16,7 +16,7 @@ export function Button ({ children, isAddToCart, amount, ...rest } : TButton) {
     >
       {isAddToCart && (
         <span>
-          <ShoppingCart />
+          <MdAddShoppingCart />
           {amount}
         </span>
       )}

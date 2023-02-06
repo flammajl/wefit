@@ -1,16 +1,15 @@
 
 import { useNavigate } from 'react-router-dom'
+import { FiPlusCircle, FiMinusCircle, FiTrash } from 'react-icons/fi'
+import { useTheme } from 'styled-components'
 import { TCartProduct, useCart } from '../../../context/CartContext'
 import { Button } from '../../../ui'
-
-import { ReactComponent as TrashIcon } from '../../../assets/images/trash.svg'
-import { ReactComponent as MinusCircle } from '../../../assets/images/minus-circle.svg'
-import { ReactComponent as PlusCircle } from '../../../assets/images/plus-circle.svg'
 import * as S from './styles'
 
 export function Mobile () {
   const navigate = useNavigate()
   const { cartProducts, removeProduct, updateProductAmount, clearCart } = useCart()
+  const { colors } = useTheme()
 
   const totalPrice = cartProducts?.reduce((sumTotal, product) => {
     const total = sumTotal + product.price * product.amount
@@ -48,11 +47,11 @@ export function Mobile () {
             <span>{product.title}</span>
             <div>
               <button onClick={() => handleProductDecrement(product)}>
-                <MinusCircle />
+                <FiMinusCircle color={colors.blue} />
               </button>
               <input type='number' value={product.amount} disabled />
               <button onClick={() => handleProductIncrement(product)}>
-                <PlusCircle />
+                <FiPlusCircle color={colors.blue} />
               </button>
             </div>
           </div>
@@ -65,7 +64,7 @@ export function Mobile () {
               }).format(product.price)}
               </strong>
               <button onClick={() => removeProduct(product.id)}>
-                <TrashIcon />
+                <FiTrash color={colors.blue} />
               </button>
             </div>
             <div>
