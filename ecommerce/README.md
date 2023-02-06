@@ -33,4 +33,4 @@ $ npm run dev | yarn dev
 
 ## 📝 Licença
 
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo de [LICENÇA](https://github.com/flammajl/kanban/blob/master/LICENSE) para detalhes.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo de [LICENÇA](https://github.com/flammajl/wefit/blob/master/license) para detalhes.
