@@ -18,7 +18,7 @@ $ cd wefit
 # Acesse a pasta do backend
 $ cd ecommerce
 
-# Se estiver usando docker excute apenas, senão siga os próximos passos
+# Se estiver usando docker execute apenas, senão siga os próximos passos
 $ docker compose up -d
 
 # Instale as dependências
